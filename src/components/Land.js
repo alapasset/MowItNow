@@ -3,15 +3,15 @@ import Plot from './Plot'
 
 export default class Land extends React.Component {
   createLand () {
-    let lineOfplots = []
+    let land = []
     for (let y = this.props.y; y > 0; y--) {
       let plots = []
       for (let x = 1; x <= this.props.x; x++) {
-        plots.push(<Plot x={x} y={y} />)
+        plots.push(<Plot key={x} x={x} y={y} />)
       }
-      lineOfplots.push(<div className='line'>{plots}</div>)
+      land.push(<div key={y} className='line'>{plots}</div>)
     }
-    return lineOfplots
+    return land
   }
 
   render () {
