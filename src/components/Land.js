@@ -1,12 +1,20 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid'
+import Plot from './Plot'
 
 export default class Land extends React.Component {
-  render () {
-    let divs
-    for (let i = 0; i < this.props.x * this.props.y; i++) {
-      divs += <Grid item xs={12 / this.props.x}><div class='landCase'>{i}</div></Grid>
+  createLand () {
+    let lineOfplots = []
+    for (let y = this.props.y; y > 0; y--) {
+      let plots = []
+      for (let x = 1; x <= this.props.x; x++) {
+        plots.push(<Plot x={x} y={y} />)
+      }
+      lineOfplots.push(<div className='line'>{plots}</div>)
     }
-    return (<Grid container spacing={0}>{divs}</Grid>)
+    return lineOfplots
+  }
+
+  render () {
+    return (<div id='land'>{this.createLand()}</div>)
   }
 }

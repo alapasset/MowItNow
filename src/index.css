@@ -1,0 +1,18 @@
+.line {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.plot {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+}
