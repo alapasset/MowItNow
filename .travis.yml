@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "node"
+  - "10"
 branches:
   - master
   - develop
@@ -13,4 +13,4 @@ before_install:
 install:
 - yarn install
 script:
-- yarn test
+- yarn testv
